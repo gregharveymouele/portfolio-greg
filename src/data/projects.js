@@ -1,0 +1,32 @@
+export const projects = [
+  {
+    slug: "confidia",
+    name: "CONFIDIA",
+    category: "Académique",
+    pitch: "Un projet numérique pensé pour faciliter l'accès à l'information et aux services.",
+    tech: ["React", "Node.js", "PostgreSQL"],
+    status: "En développement",
+    demoUrl: "",
+    githubUrl: "",
+  },
+  {
+    slug: "kubika-academy",
+    name: "Kubika Academy",
+    category: "Personnel",
+    pitch: "Une plateforme éducative numérique pensée pour rendre l'apprentissage plus accessible.",
+    tech: ["React", "Tailwind CSS"],
+    status: "Prototype",
+    demoUrl: "",
+    githubUrl: "",
+  },
+  {
+    slug: "gestion-pharmacie",
+    name: "Gestion de pharmacie",
+    category: "Académique",
+    pitch: "Une application de gestion de pharmacie pour le suivi des stocks et des ventes.",
+    tech: ["Java", "NetBeans", "PostgreSQL"],
+    status: "Terminé",
+    demoUrl: "",
+    githubUrl: "",
+  },
+];

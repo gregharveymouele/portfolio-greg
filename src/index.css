@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Brand — identiques en mode clair et sombre, ce sont les couleurs de signature */
+  --color-forest: #304F27;
+  --color-sage: #68875A;
+  --color-gold: #E3B43C;
+  --color-sun: #F8C42E;
+  --color-warmgray: #8C8478;
+  --color-ink: #0E1A0C; /* teinte sombre fixe, utilisée pour les calques toujours sombres (lightbox, survols) */
+  --color-cream: #F6F1E6; /* teinte claire fixe, utilisée pour le texte sur fonds toujours sombres (forest, ink) */
+
+  --font-grotesk: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-instrument: "Instrument Serif", ui-serif, Georgia, serif;
+}
+
+/*
+  Jetons sémantiques pour le mode clair / sombre.
+  Ils sont redéfinis dans .dark ci-dessous ; comme ce sont des variables CSS,
+  toute classe utilisant var(--surface), var(--text)... bascule automatiquement
+  quand la classe "dark" est ajoutée sur <html>, sans dupliquer de styles.
+*/
+:root {
+  --surface: #F6F1E6;        /* fond de page */
+  --surface-soft: #EDE6D3;    /* fond de section alternée (ex. J'explore) */
+  --surface-card: #FFFFFF;     /* fond des cartes (projets, certifications) */
+  --text: #0E1A0C;               /* texte principal */
+  --text-soft: rgba(14, 26, 12, 0.75);
+  --text-softer: rgba(14, 26, 12, 0.6);
+  --border: rgba(48, 79, 39, 0.14);
+  --heading: #304F27;              /* titres / liens sur fond de page (= forest) */
+}
+
+.dark {
+  --surface: #0E1611;
+  --surface-soft: #172018;
+  --surface-card: #182219;
+  --text: #F1EEE3;
+  --text-soft: rgba(241, 238, 227, 0.75);
+  --text-softer: rgba(241, 238, 227, 0.58);
+  --border: rgba(241, 238, 227, 0.14);
+  --heading: #9FD98C;              /* vert clair pour rester lisible sur fond sombre */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--surface);
+  color: var(--text);
+  font-family: var(--font-grotesk);
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--color-gold);
+  color: #0E1A0C;
+}
