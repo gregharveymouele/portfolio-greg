@@ -28,12 +28,24 @@ export default function ProjectCard({ project }) {
 
       <div className="mt-8 flex gap-5">
         {project.demoUrl && (
-          <a href={project.demoUrl} className="flex items-center gap-1 font-grotesk text-sm text-[var(--heading)] hover:text-gold">
+          <a
+            href={project.demoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Voir la démo de ${project.name} (nouvel onglet)`}
+            className="flex items-center gap-1 font-grotesk text-sm text-[var(--heading)] hover:text-gold"
+          >
             Démo <ArrowUpRight size={14} />
           </a>
         )}
         {project.githubUrl && (
-          <a href={project.githubUrl} className="flex items-center gap-1 font-grotesk text-sm text-[var(--heading)] hover:text-gold">
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Voir le code de ${project.name} sur GitHub (nouvel onglet)`}
+            className="flex items-center gap-1 font-grotesk text-sm text-[var(--heading)] hover:text-gold"
+          >
             <GitFork size={14} /> Code
           </a>
         )}

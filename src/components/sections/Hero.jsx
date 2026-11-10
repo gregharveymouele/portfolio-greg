@@ -76,6 +76,8 @@ export default function Hero() {
             <img
               src={portrait}
               alt="Portrait de Greg Harvey"
+              decoding="async"
+              fetchPriority="high"
               className="h-full w-full object-cover"
             />
           </div>

@@ -13,9 +13,20 @@ import Exploring from "./components/sections/Exploring";
 import Certifications from "./components/sections/Certifications";
 import Philosophy from "./components/sections/Philosophy";
 import Contact from "./components/sections/Contact";
+import NotFound from "./pages/NotFound";
 import { site } from "./data/site";
 
 export default function App() {
+  // Sans React Router : tout chemin différent de la racine affiche la page 404.
+  const { pathname } = window.location;
+  if (pathname !== "/" && pathname !== "/index.html") {
+    return (
+      <ThemeProvider>
+        <NotFound />
+      </ThemeProvider>
+    );
+  }
+
   return (
     <ThemeProvider>
       <LightboxProvider>

@@ -15,6 +15,7 @@ export default function Contact() {
         <RevealOnScroll delay={0.1}>
           <a
             href={`mailto:${site.email}`}
+            aria-label={`Envoyer un email à ${site.email}`}
             className="mt-8 inline-block rounded-full bg-gold px-8 py-4 font-grotesk text-sm text-ink transition-transform hover:scale-[1.03]"
           >
             {site.email}
@@ -25,6 +26,9 @@ export default function Contact() {
               <a
                 key={s.label}
                 href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Me contacter sur ${s.label} (nouvel onglet)`}
                 className="font-grotesk text-sm text-cream/70 hover:text-sun"
               >
                 {s.label}
